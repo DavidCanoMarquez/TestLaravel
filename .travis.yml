@@ -1,54 +1,15 @@
- language: php
+language: php
+php:
+- php: 5.2
+    - '5.3'
+    - '5.4'
+    - '5.5'
+    - '5.6'
+    - '7.0'
+    - '7.1'
+    - '7.2'
+    - hhvm # on Trusty only
+    - nightly
 
-env:
-  global:
-    - setup=stable
-
-matrix:
-  fast_finish: true
-  include:
-  - php: 5.2
-    - php: 5.3
-    - php: 5.4
-    - php: 5.5
-    - php: 5.6
-    - php: 7.0
-    - php: 7.1
-    - php: 7.2
-      env: setup=lowest
-
-      
-
-
-sudo: false
-
-cache:
-  directories:
-    - $HOME/.composer/cache
-
-services:
-  - memcached
-  - redis-server
-
-before_install:
-  - phpenv config-rm xdebug.ini || true
-  - echo "extension = memcached.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-  - printf "\n" | pecl install -f redis
-  - travis_retry composer self-update
-
-install:
-
-  - if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-stable --no-suggest; fi
-  - if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-lowest --prefer-stable --no-suggest; fi
-
-
-
-
-
-
-
-
-
-
-
-
+    before_script:
+      - curl -sSfL -o ~/.phpenv/versions/hhvm/bin/phpunit https://phar.phpunit.de/phpunit-5.7.phar
