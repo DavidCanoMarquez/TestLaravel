@@ -10,6 +10,3 @@ php:
       composer install
 
     script: phpunit --configurn test/phpunit.xml
-
-
-#
