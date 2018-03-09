@@ -1,18 +1,13 @@
 language: php
-
 php:
-    - 5.3
-    - 5.4
-    - 5.5
-    - 5.6
-    - hhvm
+- php:
+    - '5.5'
+    - '5.4'
+    - '5.3'
 
-before_script:
-    - travis_retry composer self-update
-    - travis_retry composer install --no-interaction --prefer-source --dev
 
-script:
-    - vendor/bin/phpunit --coverage-clover=coverage.xml
+    before_script:
+      composer install
 
-after_success:
-    - bash <(curl -s https://codecov.io/bash)
+    script: phpunit --configurn test/phpunit.xml
+
