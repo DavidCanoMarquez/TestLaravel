@@ -4,4 +4,4 @@ language: bash
 
 
 script:
-  - phpunit --vendor bin/phpunit.bat --debug --coverage-text test
+  - phpunit  vendor/bin/phpunit.bat --debug --coverage-text test
