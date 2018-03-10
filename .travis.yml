@@ -1,4 +1,10 @@
 language: bash
+sudo: required
+
+services:
+  - docker
+⋮ # rest
+
 script: vendor/bin/phpunit.bat --tap test
 notifications:
   email:
