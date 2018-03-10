@@ -1,7 +1,7 @@
 language: php
 
 
-script: /bin/phpunit.bat
-notifications:
-  email:
-    on_success: never
+jobs:
+  include:
+    - stage: test
+      script: ./phpunit.bat
