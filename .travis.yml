@@ -4,8 +4,7 @@ php:
   - 5.4
   - 5.5
 
-  before_install:
-    - cd php
 
       script: Tests/Feature/UserTest.php
+
 
