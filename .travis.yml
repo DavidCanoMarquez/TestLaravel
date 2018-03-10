@@ -1,6 +1,4 @@
 language: php
 
+script: phpunit --configuration tests/Feature/UserTest.php
 
-   before_script: composer install
-
-   script: phpunit --configuration tests/Feature/UserTest.php
