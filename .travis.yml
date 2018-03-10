@@ -17,8 +17,3 @@ php:
 # If there is no script entry then Travis CI will execute
 script:
   - phpunit --vendor bin/phpunit.bat --debug --coverage-text test
-
-
-
-
-
