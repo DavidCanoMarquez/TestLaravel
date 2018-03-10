@@ -19,7 +19,10 @@ matrix:
     - php: 7.2
       env: setup=lowest
 
-      install: php tests/Feature/UserTest.pnp
+before _script: composer install
+
+script: phpunit --configuration tests/Feature/UserTest.php
+
 
 
 
