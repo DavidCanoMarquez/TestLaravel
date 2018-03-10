@@ -1,7 +1,5 @@
-
 language: bash
-
-
-
-script:
-  - phpunit  vendor/bin/phpunit.bat --debug --coverage-text test
+script: vendor/bin/bats --tap test
+notifications:
+  email:
+    on_success: never
