@@ -1,8 +1,25 @@
 language: php
 
-sudo: required
-jobs:
+env:
+  global:
+    - setup=stable
+
+matrix:
+  fast_finish: true
   include:
-    - stage: test
-      script: ./tests/Feature/UserTest.php
+  - php: 5.2
+    - php: 5.3
+    - php: 5.4
+    - php: 5.5
+    - php: 5.6
+    - php: 7.0
+    - php: 7.1
+    - php: 7.1
+
+    - php: 7.2
+      env: setup=lowest
+
+      install: php tests/Feature/UserTest.pnp
+
+
 
