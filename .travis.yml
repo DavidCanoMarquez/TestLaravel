@@ -4,5 +4,5 @@ language: php
 jobs:
   include:
     - stage: test
-      script: ./phpunit.bat
-      
+      script: Tests/Feature/UserTest.php
+
