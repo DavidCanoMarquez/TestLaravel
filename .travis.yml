@@ -5,3 +5,4 @@ jobs:
   include:
     - stage: test
       script: ./test/Feature/UserTest.php
+      
