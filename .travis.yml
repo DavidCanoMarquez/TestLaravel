@@ -1,25 +1,25 @@
-# see http://about.travis-ci.org/docs/user/languages/php/ for more hints
 language: php
 
-# list any PHP version you want to test against
 php:
-  # using major version aliases
-
-  # aliased to 5.3.29
-  - 5.3
-  # aliased to a recent 5.4.x version
-  - 5.4
-  # aliased to a recent 5.5.x version
-  - 5.5
-  # aliased to a recent 5.6.x version
   - 5.6
-  # aliased to a recent 7.x version
   - 7.0
 
-  env:
-    global:
-      - CAMPFIRE_TOKEN=abc123
-      - TIMEOUT=1000
-    matrix:
-     # - USE_NETWORK=true
-      - USE_NETWORK=true
+before_script:
+  - mkdir bootstrap/cache
+  - mkdir storage
+  - mkdir storage/app
+  - mkdir storage/framework
+  - mkdir storage/framework/sessions
+  - mkdir storage/framework/cache
+  - mkdir storage/framework/views
+  - chmod 777 -R storage
+  - cp .env.travis .env
+  - mysql -e 'create database homestead_test;'
+  - composer self-update
+  - composer install --no-interaction
+  - php artisan key:generate
+
+script:
+  - vendor/bin/phpunithpunit
+
+  
