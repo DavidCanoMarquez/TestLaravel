@@ -23,5 +23,3 @@ php:
     matrix:
      # - USE_NETWORK=true
       - USE_NETWORK=true
-
-
