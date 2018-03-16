@@ -5,10 +5,9 @@ php:
   - 7.0
 
 before_script:
-- vendor/bin/phpunit.bat
-  ./vendor/bin/phpunit.bat
+
+  composer install
 
 script:
   - vendor/bin/phpunit.bat
-
 
