@@ -25,6 +25,6 @@ php:
       - TIMEOUT=1000
     matrix:
      # - USE_NETWORK=true
-      - USE_NETWORK=false
+      - USE_NETWORK=true
 
 
