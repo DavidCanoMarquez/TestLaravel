@@ -6,7 +6,7 @@ php:
 
 before_script:
 
-  - php artisan key:generate
+  - vendor/bin/phpunithpunit
 
 script:
   - vendor/bin/phpunithpunit
