@@ -5,9 +5,9 @@ php:
   - 7.0
 
 before_script:
-
-  - vendor/bin/phpunithpunit
+- vendor/bin/phpunit.bat
+  ./vendor/bin/phpunit.bat
 
 script:
-  - vendor/bin/phpunithpunit
+  - vendor/bin/phpunit.bat
 
