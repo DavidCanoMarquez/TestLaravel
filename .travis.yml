@@ -18,7 +18,6 @@ php:
   # aliased to a recent 7.x version
   - 7.0
 
-
   env:
     global:
       - CAMPFIRE_TOKEN=abc123
