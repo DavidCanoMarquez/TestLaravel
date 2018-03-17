@@ -14,8 +14,10 @@ php:
     - hhvm
 
 
+
+
 script:
-    - ./vendor/bin/phpunit -c ./tests/travis/phpunit.travis.xml -v
+    - ./vendor/bin/phpunit.bat
 
 after_script:
     - php vendor/bin/coveralls -v
@@ -25,4 +27,3 @@ matrix:
     allow_failures:
         - php: hhvm
         - php: 7.0
-
