@@ -1,13 +1,17 @@
 language: php
 
 php:
+  - 5.5
   - 5.6
 
-before_script:
+install:
+  - composer install --prefer-dist --no-dev --optimize-autoloader --quiet
 
- 
-  - composer self-update
-  - composer install --no-interaction
+notifications:
+  email:
+    recipients:
+      - oomusou@gmail.com
+    on_success: always
+    on_failure: always
 
-script:
-  - vendor/bin/phpunit
+script: phpunit -c phpunit.xml --coverage-text
