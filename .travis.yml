@@ -1,15 +1,17 @@
 language: php
 
+sudo: false
+
 php:
-  - 5.5
   - 5.6
+  - 7.0
+  - 5.5
 
+before_script:
+  - composer install --prefer-source
 
-notifications:
-  email:
-    recipients:
-      - oomusou@gmail.com
-    on_success: always
-    on_failure: always
+script: ./vendor/bin/phpunit --colors tests
 
-script: phpunit -c phpunit.xml --coverage-text
+cache:
+    directories:
+        - vendorml --coverage-text
