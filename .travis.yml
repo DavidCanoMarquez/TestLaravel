@@ -7,4 +7,5 @@ script:
 - 'git clone https://github.com/DavidCanoMarquez/TestLaravel.git'
 - 'dir'
 - 'cd TestLaravel'
-- 'git ftp push --user ${David} --passwd ${3666} https://github.com/Eneco/kafka-connect-ftp/blob/master/deploy.sh'
+- 'git ftp push --user ${David} --passwd ${3666} ftp://81.221.244.152/USB-FlashDisk-01/'
+
