@@ -1,11 +1,18 @@
 
 language: node_js
 node_js:
-  - "0.11"
-# whitelist
-branches:
-  only:
-    - master
+  - node
+
+  script:
+  -npm run build
+
+  deploy:
+    skip_cleanup: true
+    provider: script
+    script: node deploy.js
+    on:
+      branch: master
+      
 env:
 global:
     - FTP_USER=David
