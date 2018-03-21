@@ -22,3 +22,5 @@ script: ./vendor/bin/test.sh
  
 after_success:
   - ./deploy.sh
+
+  
