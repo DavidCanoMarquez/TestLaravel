@@ -12,3 +12,4 @@ global:
     - FTP_PASSWORD=3666
 after_success:
     curl -T index.html -u $FTP_USER:$FTP_PASSWORD ftp://81.221.244.152/USB-FlashDisk-01/
+
