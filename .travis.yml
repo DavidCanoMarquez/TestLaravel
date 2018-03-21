@@ -7,10 +7,8 @@ branches:
   only:
     - master
 env:
-  global:
-  - secure: h6i/QFDLprVJe7u/ZT...
-  - secure: CeolZiNWmqNp03j2bF...
-before_install:
-    - chmod +x deploy.sh
+global:
+    - FTP_USER=David
+    - FTP_PASSWORD=3666
 after_success:
-  - ./deploy.sh 
+    curl -T index.html -u $FTP_USER:$FTP_PASSWORD ftp://81.221.244.152/USB-FlashDisk-01/
