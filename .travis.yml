@@ -1,11 +1,24 @@
-install:
-- 'git clone https://github.com/git-ftp/git-ftp.git'
-- 'cd git-ftp'
-- 'git checkout 1.1.0'
-- 'sudo make install'
-script:
-- 'git clone https://github.com/DavidCanoMarquez/TestLaravel.git'
-- 'dir'
-- 'cd TestLaravel'
-- 'git ftp push --user ${David} --passwd ${3666} ftp://81.221.244.152/USB-FlashDisk-01/'
+language: php
+dist: trusty
+sudo: required
 
+php:
+  - '5.6'
+ 
+services:
+  - mysql
+ 
+env:
+  - CI_ENV=testing
+ 
+before_install:
+  - sudo apt-get install lftp
+  
+before_script:
+  - composer update
+  - chmod 0777 ./bin/deploy.sh
+ 
+script: ./bin/test.sh
+ 
+after_success:
+  - ./bin/deploy.sh
