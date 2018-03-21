@@ -18,9 +18,8 @@ before_script:
   - composer update
   - chmod 0777 ./deploy.sh
  
-script: ./vendor/bin/test.sh
+script:- ./deploy.sh
  
 after_success:
   - ./deploy.sh
 
-  
