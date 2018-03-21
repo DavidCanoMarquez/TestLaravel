@@ -21,6 +21,4 @@ before_script:
 script:
 - ./deploy.sh
  
-after_success:
-  - ./deploy.sh
 
