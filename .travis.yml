@@ -6,6 +6,10 @@ php:
     - 7.0
 
 before_script: phpenv config-add myconfig.ini
+
+-cat ./vendor/bin/phpunit.bat
+
+
   - cp app/config/parameters.yml.dist app/config/parameters.yml
   - composer install
 
