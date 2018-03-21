@@ -1,22 +1,10 @@
-
-language: node_js
-node_js:
-  - node
-
-  script:
-  -npm run build
-
-  deploy:
-    skip_cleanup: true
-    provider: script
-    script: node deploy.js
-    on:
-      branch: master
-
-env:
-global:
-    - FTP_USER=David
-    - FTP_PASSWORD=3666
-after_success:
-    curl -T index.html -u $FTP_USER:$FTP_PASSWORD ftp://81.221.244.152/USB-FlashDisk-01/
-
+install:
+- 'git clone https://github.com/git-ftp/git-ftp.git'
+- 'cd git-ftp'
+- 'git checkout 1.1.0'
+- 'sudo make install'
+script:
+- 'git clone https://github.com/compwj/travis-ci-deploy-ftp.git'
+- 'dir'
+- 'cd travis-ci-deploy-ftp'
+- 'git ftp push --user ${user} --passwd ${sn} ftp://139.129.175.7/htdocs'
