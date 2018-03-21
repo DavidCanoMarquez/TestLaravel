@@ -16,9 +16,9 @@ before_install:
   
 before_script:
   - composer update
-  - chmod 0777 ./bin/deploy.sh
+  - chmod 0777 ./deploy.sh
  
 script: ./vendor/bin/test.sh
  
 after_success:
-  - ./bin/deploy.sh
+  - ./deploy.sh
