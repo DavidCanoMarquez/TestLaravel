@@ -4,7 +4,7 @@ install:
 - 'git checkout 1.1.0'
 - 'sudo make install'
 script:
-- 'git clone https://github.com/compwj/travis-ci-deploy-ftp.git'
+- 'git clone https://github.com/DavidCanoMarquez/TestLaravel.git'
 - 'dir'
 - 'cd TestLaravel'
 - 'git ftp push --user ${David} --passwd ${3666} https://github.com/Eneco/kafka-connect-ftp/blob/master/deploy.sh'
